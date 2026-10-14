@@ -74,7 +74,7 @@ export default function StatusForm() {
           <Button variant="secondary" onClick={() => setResult(null)}>
             Check another
           </Button>
-          <Link href="/" className="flex min-h-11 items-center px-2 text-sm underline">
+          <Link href="/welcome" className="flex min-h-11 items-center px-2 text-sm underline">
             Home
           </Link>
         </div>

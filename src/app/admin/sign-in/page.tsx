@@ -53,6 +53,22 @@ export default async function SignInPage({ searchParams }: PageProps<"/admin/sig
             </form>
           ))}
         </div>
+        <div className="mt-5 rounded-xl border-2 border-dashed border-accent/50 bg-surface p-4 text-sm">
+          <p className="font-bold">See the public side too</p>
+          <p className="mt-0.5 text-muted">This is what delegates use, no sign-in needed. It opens in a new tab.</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <a href="/apply" target="_blank" rel="noopener" className="flex min-h-11 items-center justify-center rounded-lg bg-accent px-3 text-center font-semibold text-white">
+              Application form
+            </a>
+            <a href="/status" target="_blank" rel="noopener" className="flex min-h-11 items-center justify-center rounded-lg border border-border px-3 text-center font-semibold">
+              Check status
+            </a>
+            <a href="/welcome" target="_blank" rel="noopener" className="flex min-h-11 items-center justify-center rounded-lg border border-border px-3 text-center font-semibold">
+              Public home page
+            </a>
+          </div>
+          <p className="mt-2 text-xs text-muted">Tip: send an application, then sign in as Admin and find it under Applications to approve it.</p>
+        </div>
         <p className="mt-5 text-center text-xs text-muted">
           When an action asks for a PIN, use <b className="font-mono text-text">{DEMO_PIN}</b>. In the real system every account has its own PIN and a two-step code.
         </p>

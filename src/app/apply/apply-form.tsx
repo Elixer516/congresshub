@@ -119,7 +119,7 @@ export default function ApplyForm() {
           <Link href="/status" className="flex min-h-11 items-center justify-center rounded-lg bg-primary px-4 font-semibold text-primary-fg">
             Check my status
           </Link>
-          <Link href="/" className="flex min-h-11 items-center justify-center rounded-lg border border-border px-4 font-semibold">
+          <Link href="/welcome" className="flex min-h-11 items-center justify-center rounded-lg border border-border px-4 font-semibold">
             Back to home
           </Link>
         </div>
