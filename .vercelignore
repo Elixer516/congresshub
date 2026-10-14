@@ -1,0 +1,12 @@
+# Never upload secrets, local tools, or personal data to Vercel.
+.env
+.env.local
+.env.*.local
+.vercel-cli
+.tmp
+backups
+node_modules
+.next
+design
+MSPC
+.git

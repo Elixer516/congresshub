@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  /* Inspired by the MSPC Youth Congress 2026 look: warm cream, forest green, flame orange, gold. */
+  --bg: #fbf6ee;
+  --surface: #fffdf9;
+  --surface-2: #f3ebdf;
+  --text: #1d2a21;
+  --muted: #5e6a5f;
+  --border: #e3d7c6;
+  --primary: #1e6b45;
+  --primary-hover: #185a3a;
+  --primary-fg: #ffffff;
+  --primary-soft: #e1f0e6;
+  --accent: #e0561b;
+  --gold: #f2a51f;
+  --flame-red: #d7322b;
+  --ok: #17754a;
+  --ok-soft: #dcf2e4;
+  --warn: #a15300;
+  --warn-soft: #fdecd3;
+  --danger: #b42318;
+  --danger-soft: #fde4e1;
+  --focus: #e0561b;
+  /* Always light, even when the phone or computer is set to dark mode. */
+  color-scheme: only light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --color-flame-red: var(--flame-red);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* QR codes and ID cards stay black on white. */
+.qr-light {
+  background: #ffffff;
+  color: #000000;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
