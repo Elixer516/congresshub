@@ -1,6 +1,4 @@
 import "server-only";
-import { randomUUID } from "node:crypto";
-import { newQrToken } from "./crypto";
 import { readableBadge } from "./qr";
 import { personFolderName } from "../folder-name";
 import { DIOCESES, ID_PREFIX, REGIONS, SHIRT_SIZES } from "../config";
@@ -59,6 +57,11 @@ const addH = (d: Date, h: number) => new Date(d.getTime() + h * 3600e3);
 
 export function buildDemoData(): Tables {
   const r = rng(20261020);
+  // Ids and QR codes come from their own fixed sequence, so every server copy builds the same data.
+  const idr = rng(4242);
+  const hex = (n: number) => Array.from({ length: n }, () => Math.floor(idr() * 16).toString(16)).join("");
+  const randomUUID = () => `${hex(8)}-${hex(4)}-4${hex(3)}-${"89ab"[Math.floor(idr() * 4)]}${hex(3)}-${hex(12)}`;
+  const newQrToken = () => Buffer.from(Array.from({ length: 24 }, () => Math.floor(idr() * 256))).toString("base64url");
   const pick = <T,>(a: readonly T[]) => a[Math.floor(r() * a.length)];
   const now = new Date();
   const year = Number(new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila", year: "numeric" }).format(now));
