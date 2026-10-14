@@ -54,3 +54,6 @@ next-env.d.ts
 
 # Stray CLI config folder (never commit)
 /MSPC/
+
+# Original design files are not part of the demo repo
+/design/
